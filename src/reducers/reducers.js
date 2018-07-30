@@ -1,18 +1,21 @@
 import { ADD_MESSAGE } from '../actions/actions';
+import { combineReducers } from 'redux';
 
-const initialState = {
-    messages: []
-};
-
-function reducer(state = initialState, action) {
+function messages (messages = [], action) {
     switch (action.type) {
         case ADD_MESSAGE:
-            return {
-                ...state,
-                messages: [...state.messages, action.message]
-            }
+            return [
+                ...messages,
+                action.message
+            ]
+        default:
+            return messages;
     }
-    return state;
 }
+const reducer = combineReducers(
+    {
+        messages,
+    }
+)
 
 export default reducer;

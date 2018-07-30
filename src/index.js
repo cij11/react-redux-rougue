@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Game from './containers/Game';
 import registerServiceWorker from './registerServiceWorker';
 
 import reducers from './reducers/reducers';
@@ -20,7 +20,7 @@ store.dispatch(addMessage('test3'));
 
 ReactDOM.render(
     <Provider store={store}>
-            <App />
+            <Game />
     </Provider>,
     document.getElementById('root')
 );
