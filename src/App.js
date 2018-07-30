@@ -6,14 +6,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>{this.props.message}</h1>
+        <ul>
+          {this.props.messages.map(m => <li>{m}</li>)}
+          {this.props.messages.map((m) => {return <li>Equivalent: {m}</li>})}
+        </ul>
       </div>
     );
   }
 }
 
 App.propTypes = {
-  message: PropTypes.string.isRequired,
+  messages: PropTypes.array.isRequired,
 };
 
 export default App;

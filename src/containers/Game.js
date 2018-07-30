@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import App from '../App';
 
 const mapStateToProps = state => ({
-  message: state.messages[0],
+  messages: state.messages,
 });
 
 const Game = connect(
