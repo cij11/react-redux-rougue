@@ -10,6 +10,9 @@ class App extends Component {
           {this.props.messages.map(m => <li>{m}</li>)}
           {this.props.messages.map((m) => {return <li>Equivalent: {m}</li>})}
         </ul>
+        <svg>
+  <path d="M 20 20 V 80 H 50" stroke="black" stroke-width="2" fill="transparent" />
+</svg>
       </div>
     );
   }

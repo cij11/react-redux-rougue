@@ -1,4 +1,4 @@
-import { ADD_MESSAGE } from '../actions/actions';
+import { ADD_MESSAGE, CREATE_MAP } from '../actions/actions';
 import { combineReducers } from 'redux';
 
 function messages (messages = [], action) {
@@ -12,9 +12,31 @@ function messages (messages = [], action) {
             return messages;
     }
 }
+
+function generateMap() {
+    return [
+        ['#', '#', '#', '#', '#'],
+        ['#', '.', '.', '.', '#'],
+        ['#', '#', '#', '#', '#'],
+    ]
+}
+
+function game (game = {}, action) {
+    switch(action.type) {
+        case CREATE_MAP:
+            return {
+                ...game,
+                walls : generateMap()
+            }
+        default:
+            return game;
+    }
+}
+
 const reducer = combineReducers(
     {
         messages,
+        game,
     }
 )
 

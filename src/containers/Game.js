@@ -1,13 +1,25 @@
 import { connect } from 'react-redux';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Board from '../components/Board';
 
-import App from '../App';
+class Game extends Component {
+  render() {
+    const tiles = this.props.walls;
+    return (
+      <div><Board tiles={tiles}/></div>
+    )
+  }
+}
 
 const mapStateToProps = state => ({
-  messages: state.messages,
+  walls: state.game.walls,
 });
 
-const Game = connect(
+export default connect(
   mapStateToProps,
-)(App);
+)(Game);
 
-export default Game;
+Game.propTypes = {
+  walls: PropTypes.array.isRequired,
+};

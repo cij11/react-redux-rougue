@@ -7,7 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 import reducers from './reducers/reducers';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { addMessage } from './actions/actions';
+import { addMessage, createMap } from './actions/actions';
 
 const store = createStore(
     reducers, 
@@ -16,7 +16,9 @@ const store = createStore(
 
 store.dispatch(addMessage('test1'));
 store.dispatch(addMessage('test2'));
-store.dispatch(addMessage('test3'));
+store.dispatch(addMessage('test3 alu is the most amazing!!!'));
+
+store.dispatch(createMap());
 
 ReactDOM.render(
     <Provider store={store}>
