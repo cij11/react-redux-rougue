@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './Board.css';
 
 class Board extends Component {
     render() {
@@ -21,7 +22,7 @@ function renderRow(row) {
         <li>
         {
             row.map(column => {
-                return (<span>{column}</span>);
+                return (<span className="tileClass">{column}</span>);
             })
         }
         </li>
